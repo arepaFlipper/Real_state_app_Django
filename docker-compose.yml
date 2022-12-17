@@ -26,13 +26,14 @@ services:
       context: ./
       dockerfile: backend/Dockerfile
     volumes:
-      - ./backend:/abacus/backend
-      - ./frontend/client/dist:/abacus/frontend/client/dist
-      - ./.env:/abacus/.env
+      - ./backend:/real/backend
+      - ./frontend/client/dist:/real/frontend/client/dist
+      - ./.env:/real/.env
     ports:
       - ${PORT}:8000
+    working_dir: /real/backend
     depends_on:
       - psql
-    command: sh /abacus/backend/start.sh
+    command: sh /real/backend/start.sh
     stdin_open: true
     tty: true
