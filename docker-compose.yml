@@ -1,0 +1,38 @@
+version: '3.9'
+
+volumes:
+  local_postgres_data5: {}
+  local_postgres_backups: {}
+
+services:
+  psql:
+    container_name: real_psql
+    image: postgres
+    env_file:
+      - ./.env
+    ports:
+      - ${DB_PORT}:5432
+    volumes:
+      - local_postgres_data5:/var/lib/postgresql/data
+      - local_postgres_backups:/var/lib/postgresql/backups
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+
+  dj:
+    container_name: real_dj
+    build: 
+      context: ./
+      dockerfile: backend/Dockerfile
+    volumes:
+      - ./backend:/abacus/backend
+      - ./frontend/client/dist:/abacus/frontend/client/dist
+      - ./.env:/abacus/.env
+    ports:
+      - ${PORT}:8000
+    depends_on:
+      - psql
+    command: sh /abacus/backend/start.sh
+    stdin_open: true
+    tty: true
