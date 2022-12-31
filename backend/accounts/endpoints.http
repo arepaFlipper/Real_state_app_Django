@@ -1,0 +1,21 @@
+#signup
+POST http://localhost:8001/api/accounts/signup
+Content-Type: application/json
+
+{
+    "name": "Bob Smith",
+    "email": "bob@gmail.com",
+    "password": "password",
+    "password2": "password",
+    "x": ""
+}
+
+###login
+POST http://localhost:8001/api/token/
+Content-Type: application/json
+
+{
+    "email": "bob@gmail.com",
+    "password": "password",
+    "x": ""
+}
