@@ -8,7 +8,7 @@ class Realtor(models.Model):
     phone = models.CharField(max_length=20)
     email = models.CharField(max_length=100)
     top_seller = models.BooleanField(default=False)
-    date_hired = models.BooleanField(default=datetime.now, blank=True)
+    date_hired = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
         return self.name
