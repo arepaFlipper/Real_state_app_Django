@@ -1,8 +1,29 @@
 # listing view
 GET http://localhost:8001/api/listings/
 
+# item view
+GET http://localhost:8001/api/listings/7702-plesant-point-beach
+
+# item view
+GET http://localhost:8001/api/listings/4531-rockford-mountain-lane
+
 #Realtors top seller
-GET http://localhost:8001/api/realtors/topseller
+POST http://localhost:8001/api/listings/search
+Content-Type: application/json
+
+{
+  "sale_type": "For Sale",
+  "price": "$400.000+",
+  "bedrooms": "1+",
+  "home_type": "House",
+  "bathrooms": "1+",
+  "sqft": "1000+",
+  "days_listed": "Any",
+  "has_photos": "3+",
+  "open_house": false,
+  "keywords": "",
+  "x": ""
+}
 
 #Realtor retrieve view 
 GET http://localhost:8001/api/realtors/1
