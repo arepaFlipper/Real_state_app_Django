@@ -26,6 +26,7 @@ dist-ssr
 *.sln
 *.sw?
 .env
-*/migrations
+**/migrations/0*
 backend/accounts/migrations
 backend/realtors/migrations
+backend/listings/migrations
