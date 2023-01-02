@@ -1,0 +1,11 @@
+#Create contact 
+POST http://localhost:8001/api/contacts/
+Content-Type: application/json
+
+{
+  "name": "Thomas Anderson",
+  "email": "jhon.doe194832@gmail.com",
+  "subject": "Looking to buy a home",
+  "message": "Hello world",
+  "x": ""
+}
