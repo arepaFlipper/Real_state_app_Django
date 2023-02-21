@@ -19,6 +19,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+::selection {
+  background-color: rgba(#328da8,0.3)
+}
+
+html {
+  font-size: 62.5%;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -34,6 +65,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  box-sizing: border-box;
+  font-family: bebas-neue, sans-serif;
 }
 
 h1 {
