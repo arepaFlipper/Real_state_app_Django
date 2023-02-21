@@ -3,7 +3,7 @@ import Layout from './hocs/Layout'
 import NotFound from './components/NotFound'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { About, Contact, Home, Listings, ListingDetail, Login, SignUp } from "./containers/";
-import './App.css'
+import './sass/main.scss'
 import { Provider } from 'react-redux'
 import store from './store'
 
