@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Link, redirect } from "react-router-dom";
+import { Link, redirect, Navigate, } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { login } from "../actions/auth";
 
 const Login = ({ login, isAuthenticated }) => {
+  /* const history = useHistory(); */
   const [formData, setFormData] = useState({ email: '', password: '' })
   const { email, password } = formData;
   const onChange = e => {
@@ -18,6 +19,7 @@ const Login = ({ login, isAuthenticated }) => {
 
   if (isAuthenticated) {
     redirect("/");
+    return <Navigate to="/" />
   }
   return (
     <div className="auth">
