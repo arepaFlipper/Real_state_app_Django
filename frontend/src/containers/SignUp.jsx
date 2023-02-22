@@ -31,7 +31,8 @@ const SignUp = ({ setAlert, signup, isAuthenticated }) => {
   }
 
   if (isAuthenticated) {
-    return redirect("/");
+    redirect("/");
+    return <Navigate to="/" />
   }
 
   return (

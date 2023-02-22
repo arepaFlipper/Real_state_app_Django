@@ -39,7 +39,7 @@ const Login = ({ login, isAuthenticated }) => {
         <div className='auth__form__froup'>
           <input className='auth__form__input' type='password' placeholder='password' name='password' value={password} onChange={e => onChange(e)} minLength='6' />
         </div>
-        <button className='auth__form__button'>Login</button>
+        <button className='auth__form__button' type="submit">Login</button>
       </form>
       <p className="auth__authtext">
         Don't have an account <Link className='auth__authtext__link' to='/signup' >Sign Up</Link>
