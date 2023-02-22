@@ -17,7 +17,7 @@ const Login = ({ login, isAuthenticated }) => {
   };
 
   if (isAuthenticated) {
-    return redirect("/");
+    redirect("/");
   }
   return (
     <div className="auth">
@@ -51,8 +51,12 @@ Login.propTypes = {
   isAuthenticated: PropTypes.bool
 }
 
-const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated,
-});
+const mapStateToProps = state => {
+  console.log(`🐿️%cLogin.jsx:57 - state`, 'font-weight:bold; background:#9f6000;color:#fff;'); //DELETEME
+  console.log(state); // DELETEME
+  return ({
+    isAuthenticated: state.auth.isAuthenticated,
+  })
+};
 
 export default connect(mapStateToProps, { login })(Login);
