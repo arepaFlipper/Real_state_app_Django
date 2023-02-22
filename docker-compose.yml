@@ -1,7 +1,7 @@
 version: '3.9'
 
 volumes:
-  local_postgres_data5: {}
+  local_postgres_data8: {}
   local_postgres_backups: {}
 
 services:
@@ -13,7 +13,7 @@ services:
     ports:
       - ${DB_PORT}:5432
     volumes:
-      - local_postgres_data5:/var/lib/postgresql/data
+      - local_postgres_data8:/var/lib/postgresql/data
       - local_postgres_backups:/var/lib/postgresql/backups
     environment:
       - POSTGRES_DB=${DB_NAME}

@@ -11,7 +11,7 @@ export const login = (email, password) => {
     const body = JSON.stringify({ email, password });
 
     try {
-      const res = await axios.post('http://localhost:8000/api/token/', body, config);
+      const res = await axios.post('http://localhost:8001/api/token/', body, config);
       dispatch({
         type: LOGIN_SUCCESS,
         payload: res.data,
@@ -38,7 +38,7 @@ export const signup = ({ name, email, password, password2 }) => {
     const body = JSON.stringify({ name, email, password, password2 })
 
     try {
-      const res = await axios.post('http://localhost:8000/api/accounts/signup', body, config);
+      const res = await axios.post('http://localhost:8001/api/accounts/signup', body, config);
       dispatch({
         type: SIGNUP_SUCCESS,
         payload: res.data,
@@ -61,7 +61,7 @@ export const logout = () => {
     dispatch({ type: LOGOUT });
 
     try {
-      const res = await axios.post('http://localhost:8000/api/accounts/signup', body, config);
+      const res = await axios.post('http://localhost:8001/api/accounts/signup', body, config);
       dispatch({
         type: SIGNUP_SUCCESS,
         payload: res.data,

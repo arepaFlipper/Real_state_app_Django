@@ -12,7 +12,7 @@ const Login = ({ login, isAuthenticated }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
   const onSubmit = e => {
-    e.preventDefailt();
+    e.preventDefault();
     login(email, password);
   };
 

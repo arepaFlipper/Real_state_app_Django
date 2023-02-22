@@ -3,6 +3,8 @@ import propTypes from "prop-types";
 import { connect } from "react-redux";
 
 const Alert = ({ alerts }) => {
+  console.log(`👛%cAlert.jsx:6 - alerts`, 'font-weight:bold; background:#20df00;color:#fff;'); //DELETEME
+  console.log(alerts); // DELETEME
   return (
     (alerts !== null && alerts.length > 0) && alerts.map(alert => {
       return (
