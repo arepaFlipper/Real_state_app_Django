@@ -149,7 +149,7 @@ const ListingForm = (props) => {
         <div className='col-1-of-6'>
           {loading ?
             <div className='listingform__loader'>
-              <Loader
+              <Circles
                 type="Oval"
                 color="#424242"
                 height={50}
@@ -164,4 +164,7 @@ const ListingForm = (props) => {
   )
 }
 
+ListingForm.prototype = {
+  setListing: PropTypes.func.isRequired
+}
 export default ListingForm
