@@ -52,8 +52,6 @@ Login.propTypes = {
 }
 
 const mapStateToProps = state => {
-  console.log(`🐿️%cLogin.jsx:57 - state`, 'font-weight:bold; background:#9f6000;color:#fff;'); //DELETEME
-  console.log(state); // DELETEME
   return ({
     isAuthenticated: state.auth.isAuthenticated,
   })
